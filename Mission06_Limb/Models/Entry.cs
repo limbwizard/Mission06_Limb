@@ -4,6 +4,8 @@ namespace Mission06_Limb.Models
 {
     public class Entry
     {
+        [Key]
+        [Required]
         public int MovieId { get; set; }
         
         [Required]

@@ -8,6 +8,12 @@ namespace Mission06_Limb.Controllers
     public class HomeController : Controller
     {
 
+        private MovieEntryContext _context;
+        public HomeController(MovieEntryContext temp)
+        {
+            _context = temp;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -22,6 +28,10 @@ namespace Mission06_Limb.Controllers
         [HttpPost]
         public IActionResult MovieEntry(Entry response)
         {
+            _context.Entries.Add(response); //Add record to database
+            _context.SaveChanges();
+
+
             return View("Confirmation", response);
         }
 
