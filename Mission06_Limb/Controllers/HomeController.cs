@@ -25,6 +25,12 @@ namespace Mission06_Limb.Controllers
             return View();
         }
 
+        public IActionResult AboutJoel()
+        {
+            return View();
+        }
+
+
         [HttpPost]
         public IActionResult MovieEntry(Entry response)
         {
